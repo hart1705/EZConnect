@@ -1,0 +1,67 @@
+﻿@model IEnumerable<PORTAL.DAL.EF.Models.Employee>
+
+@{
+    ViewData["Title"] = "Employee Zone";
+    Layout = "~/Views/Shared/_FormLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                <input type="text" id="Search" placeholder="Search Employee" class="form-control" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="box box-widget">
+    <div class="box-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Position
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="Search">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Employee_Name_English)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Position)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        function Contains(text_one, text_two) {
+            if (text_one.indexOf(text_two) != -1)
+                return true;
+        }
+        $("#Search").keyup(function () {
+            var searchText = $("#Search").val().toLowerCase();
+            $(".Search").each(function () {
+                if(!Contains($(this).text().toLowerCase(), searchText)) {
+                    $(this).hide();
+                }
+                else {
+                    $(this).show();
+                }
+            });
+        });
+    });
+</script>

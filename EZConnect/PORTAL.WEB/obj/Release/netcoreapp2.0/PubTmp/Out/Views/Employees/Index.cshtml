@@ -1,0 +1,218 @@
+﻿@model IEnumerable<PORTAL.DAL.EF.Models.Employee>
+
+@{
+    ViewData["Title"] = "Employees";
+    Layout = "~/Views/Shared/_FormLayout.cshtml";
+}
+
+@section ContentHeader{
+    <h4>Employees</h4>
+}sss
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee_Name_English)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee_Name_Arabic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PositionArabic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cost_Center)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hiring_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Termination_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Birth_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ID_Iqama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_Mail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nationality)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sponsor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Line_Manager_No)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Line_Manager_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Line_Manager_Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dept_Head_No)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dept_Head_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dept_Head_Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee_Spouse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Section)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cost_Center_HoD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Function_Head)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Division)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Line_Manager_Name_AP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dept_Head_Name_AP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oracle_Org_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee_Name_English)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee_Name_Arabic)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Position)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PositionArabic)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Grade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cost_Center)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hiring_Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Termination_Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Birth_Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_Iqama)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.E_Mail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mobile)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nationality)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sponsor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Line_Manager_No)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Line_Manager_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Line_Manager_Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dept_Head_No)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dept_Head_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dept_Head_Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee_Spouse)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Section)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cost_Center_HoD)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Function_Head)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Division)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Line_Manager_Name_AP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dept_Head_Name_AP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Oracle_Org_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Emp_ID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Emp_ID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Emp_ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

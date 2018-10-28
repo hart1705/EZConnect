@@ -1,0 +1,19 @@
+﻿@model PORTAL.WEB.Models.OtpLoginViewModels.OtpLoginViewModel
+
+@{
+    ViewData["Title"] = "Employee Zone";
+    Layout = "~/Views/Shared/_FormLayout.cshtml";
+}
+
+@section ContentHeader{
+    <h4>Employee Zone</h4>
+}
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="search">
+            <div class="form-group">
+                <input type="submit" value="Search Employee" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>

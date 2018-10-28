@@ -1,0 +1,33 @@
+﻿{
+    "Item": [
+        {
+            "Category": "Administration",
+            "MenuItem": [
+                {
+                    "Title": "Application User",
+                    "Controller": "ApplicationUser",
+                    "Action": "Index"
+                },
+                {
+                    "Title": "Application Role",
+                    "Controller": "ApplicationRole",
+                    "Action": "Index"
+                },
+                {
+                    "Title": "Application Permission",
+                    "Controller": "ApplicationPermission",
+                    "Action": "Index"
+                }
+            ]
+        }
+    ],
+  "NavItem": [
+    {
+      "MenuItem": {
+        "Title": "OTP",
+        "Controller": "OtpCodes",
+        "Action": "Index"
+      }
+    }
+  ]
+}

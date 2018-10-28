@@ -1,0 +1,36 @@
+C:\Users\aramos\Documents\GitHub\JMP-Project\PORTAL.DAL.EF\bin\Release\netstandard2.0\PORTAL.DAL.EF.deps.json
+C:\Users\aramos\Documents\GitHub\JMP-Project\PORTAL.DAL.EF\bin\Release\netstandard2.0\PORTAL.DAL.EF.dll
+C:\Users\aramos\Documents\GitHub\JMP-Project\PORTAL.DAL.EF\bin\Release\netstandard2.0\PORTAL.DAL.EF.pdb
+C:\Users\aramos\Documents\GitHub\JMP-Project\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.csprojAssemblyReference.cache
+C:\Users\aramos\Documents\GitHub\JMP-Project\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.csproj.CoreCompileInputs.cache
+C:\Users\aramos\Documents\GitHub\JMP-Project\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.AssemblyInfoInputs.cache
+C:\Users\aramos\Documents\GitHub\JMP-Project\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.AssemblyInfo.cs
+C:\Users\aramos\Documents\GitHub\JMP-Project\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.dll
+C:\Users\aramos\Documents\GitHub\JMP-Project\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.pdb
+F:\My Projects\STI\STI-Pre-Registration\STI-Project\PORTAL.DAL.EF\bin\Release\netstandard2.0\PORTAL.DAL.EF.deps.json
+F:\My Projects\STI\STI-Pre-Registration\STI-Project\PORTAL.DAL.EF\bin\Release\netstandard2.0\PORTAL.DAL.EF.dll
+F:\My Projects\STI\STI-Pre-Registration\STI-Project\PORTAL.DAL.EF\bin\Release\netstandard2.0\PORTAL.DAL.EF.pdb
+F:\My Projects\STI\STI-Pre-Registration\STI-Project\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.csprojAssemblyReference.cache
+F:\My Projects\STI\STI-Pre-Registration\STI-Project\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.csproj.CoreCompileInputs.cache
+F:\My Projects\STI\STI-Pre-Registration\STI-Project\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.AssemblyInfoInputs.cache
+F:\My Projects\STI\STI-Pre-Registration\STI-Project\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.AssemblyInfo.cs
+F:\My Projects\STI\STI-Pre-Registration\STI-Project\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.dll
+F:\My Projects\STI\STI-Pre-Registration\STI-Project\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.pdb
+C:\Users\aramos\Documents\GitHub\EZ\STI-Project\PORTAL.DAL.EF\bin\Release\netstandard2.0\PORTAL.DAL.EF.deps.json
+C:\Users\aramos\Documents\GitHub\EZ\STI-Project\PORTAL.DAL.EF\bin\Release\netstandard2.0\PORTAL.DAL.EF.dll
+C:\Users\aramos\Documents\GitHub\EZ\STI-Project\PORTAL.DAL.EF\bin\Release\netstandard2.0\PORTAL.DAL.EF.pdb
+C:\Users\aramos\Documents\GitHub\EZ\STI-Project\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.csprojAssemblyReference.cache
+C:\Users\aramos\Documents\GitHub\EZ\STI-Project\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.csproj.CoreCompileInputs.cache
+C:\Users\aramos\Documents\GitHub\EZ\STI-Project\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.AssemblyInfoInputs.cache
+C:\Users\aramos\Documents\GitHub\EZ\STI-Project\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.AssemblyInfo.cs
+C:\Users\aramos\Documents\GitHub\EZ\STI-Project\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.dll
+C:\Users\aramos\Documents\GitHub\EZ\STI-Project\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.pdb
+F:\My Projects\EZ Project\DotNet Core\EZConnect\PORTAL.DAL.EF\bin\Release\netstandard2.0\PORTAL.DAL.EF.deps.json
+F:\My Projects\EZ Project\DotNet Core\EZConnect\PORTAL.DAL.EF\bin\Release\netstandard2.0\PORTAL.DAL.EF.dll
+F:\My Projects\EZ Project\DotNet Core\EZConnect\PORTAL.DAL.EF\bin\Release\netstandard2.0\PORTAL.DAL.EF.pdb
+F:\My Projects\EZ Project\DotNet Core\EZConnect\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.csprojAssemblyReference.cache
+F:\My Projects\EZ Project\DotNet Core\EZConnect\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.csproj.CoreCompileInputs.cache
+F:\My Projects\EZ Project\DotNet Core\EZConnect\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.AssemblyInfoInputs.cache
+F:\My Projects\EZ Project\DotNet Core\EZConnect\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.AssemblyInfo.cs
+F:\My Projects\EZ Project\DotNet Core\EZConnect\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.dll
+F:\My Projects\EZ Project\DotNet Core\EZConnect\PORTAL.DAL.EF\obj\Release\netstandard2.0\PORTAL.DAL.EF.pdb
