@@ -73,9 +73,12 @@ namespace PORTAL.WEB
 
             app.UseMvc(routes =>
             {
+                //routes.MapRoute(
+                //    name: "default",
+                //    template: "{controller=Home}/{action=Index}/{id?}");
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=EmployeeZone}/{action=Login}/{id?}");
             });
         }
     }

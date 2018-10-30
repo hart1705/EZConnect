@@ -1,0 +1,34 @@
+﻿@model PORTAL.WEB.Models.EmployeeZoneViewModels.OtpLoginViewModel
+
+@{
+    ViewData["Title"] = "OTP Codes";
+    Layout = "~/Views/Shared/_FormLayoutMobile.cshtml";
+}
+
+@section ContentHeader{
+    <h4>OTP Login</h4>
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="UserName" class="form-control" placeholder="Username" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="NEXT" class="btn btn-default form-control" style="background-color:#419C9D" />
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="span"><img class="center-block" src="~/images/kaec_logo_colored.png" style="max-height: 150px; max-width: 100%; margin-top:50px;" /></div>
+    </div>
+</div>

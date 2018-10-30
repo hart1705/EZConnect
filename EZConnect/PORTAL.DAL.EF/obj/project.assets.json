@@ -3883,11 +3883,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\My Projects\\EZ Project\\DotNet Core\\EZConnect\\PORTAL.DAL.EF\\PORTAL.DAL.EF.csproj",
+      "projectUniqueName": "C:\\Users\\aramos\\Documents\\GitHub\\EZConnect\\EZConnect\\PORTAL.DAL.EF\\PORTAL.DAL.EF.csproj",
       "projectName": "PORTAL.DAL.EF",
-      "projectPath": "F:\\My Projects\\EZ Project\\DotNet Core\\EZConnect\\PORTAL.DAL.EF\\PORTAL.DAL.EF.csproj",
+      "projectPath": "C:\\Users\\aramos\\Documents\\GitHub\\EZConnect\\EZConnect\\PORTAL.DAL.EF\\PORTAL.DAL.EF.csproj",
       "packagesPath": "C:\\Users\\aramos\\.nuget\\packages\\",
-      "outputPath": "F:\\My Projects\\EZ Project\\DotNet Core\\EZConnect\\PORTAL.DAL.EF\\obj\\",
+      "outputPath": "C:\\Users\\aramos\\Documents\\GitHub\\EZConnect\\EZConnect\\PORTAL.DAL.EF\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

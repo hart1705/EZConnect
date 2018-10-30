@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "Employee Zone";
-    Layout = "~/Views/Shared/_FormLayout.cshtml";
+    //Layout = "~/Views/Shared/_FormLayout.cshtml";
 }
 
 <div class="row">
@@ -18,29 +18,41 @@
 <div class="box box-widget">
     <div class="box-body">
         <table class="table">
-            <thead>
-                <tr>
-                    <th>
-                        Name
-                    </th>
-                    <th>
-                        Position
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr class="Search">
+            @foreach (var item in Model)
+            {
+                <tbody>
+
+                    <tr class="Search" onclick="location.href = '@(Url.Action("Details", "EmployeeZone", new { empId = item.Emp_ID }))'">
                         <td>
-                            @Html.DisplayFor(modelItem => item.Employee_Name_English)
+
+                            @{ var src = item.Emp_ID.ToString() != null ? item.Emp_ID.ToString() + ".jpg" : "default.jpg";}
+                            @{ var imagePath = "~/images/ez/" + item.Emp_ID.ToString() + ".jpg"; 
+                                if (imagePath != null)
+                                {
+                                    imagePath = "~/images/ez/" + item.Emp_ID.ToString() + ".jpg";
+                                }
+                                else
+                                {
+                                    imagePath = "~/images/ez/default.jpg";
+
+                                }
+                            }
+                            @*<script>document.getElementById('imageBox').src = "~/images/" + item.Emp_ID + ".jpg" </script>*@
+
+                            <img class="center-block" src="~/images/ez/@src" style="max-height: 120px; max-width: 100%;" />
                         </td>
+                        
                         <td>
-                            @Html.DisplayFor(modelItem => item.Position)
+                            <b>@Html.DisplayFor(modelItem => item.Employee_Name_English)</b><br />
+                            @Html.DisplayFor(modelItem => item.Employee_Name_Arabic) <br />
+                            @Html.DisplayFor(modelItem => item.Position) <br />
+                            @Html.DisplayFor(modelItem => item.Department)
                         </td>
+
                     </tr>
-                }
-            </tbody>
+
+                </tbody>
+            }
         </table>
     </div>
 </div>

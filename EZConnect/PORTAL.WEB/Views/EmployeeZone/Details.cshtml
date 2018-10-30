@@ -1,0 +1,116 @@
+﻿@model PORTAL.WEB.Models.EmployeeZoneViewModels.EmployeeDetailsViewModels
+@*@model PORTAL.DAL.EF.Models.Employee*@
+@{
+    ViewData["Title"] = "Employee Details";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <dl class="dl-horizontal">
+            <dt>
+                @{ var src = @Model.Emp_ID.ToString() + ".jpg";}
+                <img class="media-left" src="~/images/ez/@src" style="max-height: 120px; max-width: 100%;" />
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Employee_Name_English)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Employee_Name_Arabic)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Position)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Emp_ID)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Cost_Center)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.Department)
+            </dt>
+        </dl>
+        <a class='btn btn-info btn-block btn-lg' href='mailto:aramos@gurango.net'><i class="fa fa-envelope-o fa-fw"></i> Email @Html.DisplayFor(model => model.E_Mail) </a>
+        <br>
+        <a class='btn btn-info btn-block btn-lg' href='tel:09957468125'><i class="fa fa-mobile fa-fw"></i> Call Mobile @Html.DisplayFor(model => model.Mobile) </a>
+        <br>
+        <a class='btn btn-info btn-block btn-lg' href='sms:09957468125'><i class="fa fa-send-o fa-fw"></i> Send SMS @Html.DisplayFor(model => model.Mobile) </a>
+        <b>Line Managers</b>
+        <table class="table">
+            @foreach (var item in Model.LineManager)
+            {
+
+                <tbody>
+
+                    <tr class="Search" onclick="location.href = '@(Url.Action("Details", "EmployeeZone", new { empId = item.Emp_ID }))'">
+                        <td>
+
+                            @{ var srcLineManager = item.Emp_ID.ToString() + ".jpg";}
+
+                            <img class="center-block" src="~/images/ez/@srcLineManager" style="max-height: 120px; max-width: 100%;" />
+                        </td>
+
+                        <td>
+                            <b>@Html.DisplayFor(modelItem => item.Employee_Name_English)</b><br />
+                            @Html.DisplayFor(modelItem => item.Employee_Name_Arabic) <br />
+                            @Html.DisplayFor(modelItem => item.Position) <br />
+                        </td>
+
+                    </tr>
+
+                </tbody>
+            }
+        </table>
+        <b>Shares Line Managers</b>
+        <table class="table">
+            @foreach (var item in Model.SharesLineManagers)
+            {
+                <tbody>
+
+                    <tr class="Search" onclick="location.href = '@(Url.Action("Details", "EmployeeZone", new { empId = item.Emp_ID }))'">
+                        <td>
+
+                            @{ var srcLineManager = item.Emp_ID.ToString() + ".jpg";}
+
+                            <img class="center-block" src="~/images/ez/@srcLineManager" style="max-height: 120px; max-width: 100%;" />
+                        </td>
+
+                        <td>
+                            <b>@Html.DisplayFor(modelItem => item.Employee_Name_English)</b><br />
+                            @Html.DisplayFor(modelItem => item.Employee_Name_Arabic) <br />
+                            @Html.DisplayFor(modelItem => item.Position) <br />
+                        </td>
+
+                    </tr>
+
+                </tbody>
+            }
+        </table>
+        <b>Direct Reports</b>
+        <table class="table">
+            @foreach (var item in Model.DirectReports)
+            {
+                <tbody>
+
+                    <tr class="Search" onclick="location.href = '@(Url.Action("Details", "EmployeeZone", new { empId = item.Emp_ID }))'">
+                        <td>
+
+                            @{ var srcDirectReport = item.Emp_ID.ToString() + ".jpg";}
+
+                            <img class="center-block" src="~/images/ez/@srcDirectReport" style="max-height: 120px; max-width: 100%;" />
+                        </td>
+
+                        <td>
+                            <b>@Html.DisplayFor(modelItem => item.Employee_Name_English)</b><br />
+                            @Html.DisplayFor(modelItem => item.Employee_Name_Arabic) <br />
+                            @Html.DisplayFor(modelItem => item.Position) <br />
+                        </td>
+
+                    </tr>
+
+                </tbody>
+            }
+        </table>
+    </div>
+</div>

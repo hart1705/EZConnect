@@ -1,0 +1,33 @@
+﻿@model PORTAL.WEB.Models.EmployeeZoneViewModels.OtpCodeViewModel
+
+@{
+    ViewData["Title"] = "OTP Codes";
+    Layout = "~/Views/Shared/_FormLayoutMobile.cshtml";
+}
+
+@section ContentHeader{
+    <h4>OTP Code</h4>
+}
+<p style="font-size:20px; text-align:center">An email with a verification code has been sent to</p>
+<p style="font-size:20px; text-align:center"><b>@ViewData["email"]</b></p>
+<p style="font-size:20px; text-align:center">Enter the code here:</p>
+<div class="row">
+    <div class="col-md-12">
+
+        <form asp-action="Validate">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="Code" class="form-control" placeholder="Code" />
+                <span asp-validation-for="Code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="CONTINUE" class="btn btn-default form-control" style="background-color:#419C9D" />
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="span"><img class="center-block" src="~/images/kaec_logo_colored.png" style="max-height: 150px; max-width: 100%; margin-top:50px;" /></div>
+    </div>
+</div>

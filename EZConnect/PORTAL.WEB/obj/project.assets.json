@@ -13349,11 +13349,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\My Projects\\EZ Project\\DotNet Core\\EZConnect\\PORTAL.WEB\\PORTAL.WEB.csproj",
+      "projectUniqueName": "C:\\Users\\aramos\\Documents\\GitHub\\EZConnect\\EZConnect\\PORTAL.WEB\\PORTAL.WEB.csproj",
       "projectName": "PORTAL.WEB",
-      "projectPath": "F:\\My Projects\\EZ Project\\DotNet Core\\EZConnect\\PORTAL.WEB\\PORTAL.WEB.csproj",
+      "projectPath": "C:\\Users\\aramos\\Documents\\GitHub\\EZConnect\\EZConnect\\PORTAL.WEB\\PORTAL.WEB.csproj",
       "packagesPath": "C:\\Users\\aramos\\.nuget\\packages\\",
-      "outputPath": "F:\\My Projects\\EZ Project\\DotNet Core\\EZConnect\\PORTAL.WEB\\obj\\",
+      "outputPath": "C:\\Users\\aramos\\Documents\\GitHub\\EZConnect\\EZConnect\\PORTAL.WEB\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13372,8 +13372,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "F:\\My Projects\\EZ Project\\DotNet Core\\EZConnect\\PORTAL.DAL.EF\\PORTAL.DAL.EF.csproj": {
-              "projectPath": "F:\\My Projects\\EZ Project\\DotNet Core\\EZConnect\\PORTAL.DAL.EF\\PORTAL.DAL.EF.csproj"
+            "C:\\Users\\aramos\\Documents\\GitHub\\EZConnect\\EZConnect\\PORTAL.DAL.EF\\PORTAL.DAL.EF.csproj": {
+              "projectPath": "C:\\Users\\aramos\\Documents\\GitHub\\EZConnect\\EZConnect\\PORTAL.DAL.EF\\PORTAL.DAL.EF.csproj"
             }
           }
         }

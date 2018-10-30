@@ -1,0 +1,31 @@
+﻿@model PORTAL.WEB.Models.EmployeeZoneViewModels.OtpCodeViewModel
+
+@{
+    ViewData["Title"] = "My Directory";
+    Layout = "~/Views/Shared/_FormLayoutMobile.cshtml";
+}
+
+@section ContentHeader{
+    <h4>MY Directory</h4>
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Search">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-default form-control" />
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="span"><img class="center-block" src="~/images/kaec_logo_colored.png" style="max-height: 150px; max-width: 100%; margin-top:50px;" /></div>
+    </div>
+</div>

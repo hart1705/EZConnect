@@ -3,6 +3,7 @@ using PORTAL.DAL.EF.Models;
 using PORTAL.WEB.Models.ActionViewModels;
 using PORTAL.WEB.Models.ApplicationRoleViewModels;
 using PORTAL.WEB.Models.ApplicationUserViewModels;
+using PORTAL.WEB.Models.EmployeeZoneViewModels;
 using PORTAL.WEB.Models.PermissionViewModels;
 
 namespace PORTAL.WEB.Extensions
@@ -15,6 +16,8 @@ namespace PORTAL.WEB.Extensions
             CreateMap<ApplicationAction, ApplicationActionModel>().ReverseMap();
             CreateMap<ApplicationRole, ApplicationRoleModel>().ReverseMap();
             CreateMap<ApplicationUser, ApplicationUserModel>().ReverseMap();
+            CreateMap<Employee, EmployeeDetailsViewModels>().ReverseMap();
+
         }
     }
 }

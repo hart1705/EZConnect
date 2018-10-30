@@ -34,3 +34,11 @@ F:\My Projects\EZ Project\DotNet Core\EZConnect\PORTAL.DAL.EF\obj\Debug\netstand
 F:\My Projects\EZ Project\DotNet Core\EZConnect\PORTAL.DAL.EF\obj\Debug\netstandard2.0\PORTAL.DAL.EF.AssemblyInfo.cs
 F:\My Projects\EZ Project\DotNet Core\EZConnect\PORTAL.DAL.EF\obj\Debug\netstandard2.0\PORTAL.DAL.EF.dll
 F:\My Projects\EZ Project\DotNet Core\EZConnect\PORTAL.DAL.EF\obj\Debug\netstandard2.0\PORTAL.DAL.EF.pdb
+C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.DAL.EF\bin\Debug\netstandard2.0\PORTAL.DAL.EF.deps.json
+C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.DAL.EF\bin\Debug\netstandard2.0\PORTAL.DAL.EF.dll
+C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.DAL.EF\bin\Debug\netstandard2.0\PORTAL.DAL.EF.pdb
+C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.DAL.EF\obj\Debug\netstandard2.0\PORTAL.DAL.EF.csproj.CoreCompileInputs.cache
+C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.DAL.EF\obj\Debug\netstandard2.0\PORTAL.DAL.EF.AssemblyInfoInputs.cache
+C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.DAL.EF\obj\Debug\netstandard2.0\PORTAL.DAL.EF.AssemblyInfo.cs
+C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.DAL.EF\obj\Debug\netstandard2.0\PORTAL.DAL.EF.dll
+C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.DAL.EF\obj\Debug\netstandard2.0\PORTAL.DAL.EF.pdb
