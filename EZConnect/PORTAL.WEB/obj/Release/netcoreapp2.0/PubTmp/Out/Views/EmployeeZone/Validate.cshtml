@@ -1,0 +1,84 @@
+﻿@model PORTAL.WEB.Models.EmployeeZoneViewModels.OtpCodeViewModel
+
+@{
+    ViewData["Title"] = "OTP Codes";
+    Layout = "~/Views/Shared/_FormLayoutMobile.cshtml";
+}
+
+<p style="font-size:20px; text-align:center">An email with a verification code has been sent to</p>
+<p style="font-size:20px; text-align:center"><b>@ViewData["email"]</b></p>
+<p style="font-size:20px; text-align:center">Enter the code here:</p>
+<div class="row">
+    <div class="col-md-12">
+
+        <form asp-action="Validate" name="formName">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <input asp-for="Code" id="code" class="form-control" placeholder="Code" type="hidden" />
+            
+            <div class="form-group">
+                <div class="otp-txt-align">
+                    <input asp-for="Code1" type="number" id="otp1" name="otp1" class="otp-txt" placeholder="__" maxlength="1" onkeypress="return isNumberKey(event)" oninput="autotab(this, document.formName.otp2)" />
+                    <input asp-for="Code2" type="number" id="otp2" name="otp2" class="otp-txt" placeholder="__" maxlength="1" onkeypress="return isNumberKey(event)" oninput="autotab(this, document.formName.otp3)" />
+                    <input asp-for="Code3" type="number" id="otp3" name="otp3" class="otp-txt" placeholder="__" maxlength="1" onkeypress="return isNumberKey(event)" oninput="autotab(this, document.formName.otp4)" />
+                    <input asp-for="Code4" type="number" id="otp4" name="otp4" class="otp-txt" placeholder="__" maxlength="1" onkeypress="return isNumberKey(event)" oninput="autotab(this, document.formName.otp5)" />
+                    <input asp-for="Code5" type="number" id="otp5" name="otp5" class="otp-txt" placeholder="__" maxlength="1" onkeypress="return isNumberKey(event)" oninput="autotab(this, document.formName.continue)" />
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" id="btncontinue" name="continue" value="CONTINUE" class="btn btn-default form-control ez-color" disabled />
+            </div>
+            @*<div class="form-group otp-txt-align">
+                <a href="@(Url.Action("login", "EmployeeZone"))">Send a new code</a>
+            </div>*@
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="span"><img class="center-block" src="~/images/kaec_logo_colored.png" style="max-height: 150px; max-width: 100%; margin-top:50px;" /></div>
+    </div>
+</div>
+
+<script>
+    
+    function isNumberKey(evt)
+	{
+		var charCode = (evt.which) ? evt.which : evt.keyCode;
+		if (charCode != 46 && charCode > 31
+		&& (charCode < 48 || charCode > 57))
+		return false;
+    if (this.value.length == this.maxLength) {
+         $(this).nextAll('.otp-txt:enabled:first').focus();
+       }
+		return true;
+	}
+   function isNumericKey(evt)
+	{
+		var charCode = (evt.which) ? evt.which : evt.keyCode;
+		if (charCode != 46 && charCode > 31
+		&& (charCode < 48 || charCode > 57))
+		return true;
+		return false;
+	}
+    
+    function autotab(current,to)
+    {
+        var otp1 = document.getElementById("otp1");
+        var otp2 = document.getElementById("otp2");
+        var otp3 = document.getElementById("otp3");
+        var otp4 = document.getElementById("otp4");
+        var otp5 = document.getElementById("otp5");
+        var code = document.getElementById("code");
+        if (current.getAttribute && current.value.length==current.getAttribute("maxlength"))
+        {
+            to.focus()
+            if (otp1 && otp1.value && otp2 && otp2.value && otp3 && otp3.value && otp4 && otp4.value && otp5 && otp5.value) {
+                document.getElementById('btncontinue').disabled = false;
+                code.value = otp1.value + otp2.value + otp3.value + otp4.value + otp5.value;
+                //$('#btncontinue').prop('disable', false);  //jquery
+            }
+        }
+    }
+
+</script>

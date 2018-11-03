@@ -14,7 +14,7 @@ using PORTAL.DAL.EF;
 using PORTAL.DAL.EF.Models;
 using PORTAL.WEB.Controllers.API;
 using PORTAL.WEB.Models.EmployeeZoneViewModels;
-
+using Microsoft.AspNetCore.Hosting;
 namespace PORTAL.WEB.Controllers
 {
     public class EmployeeZoneController : Controller
@@ -22,11 +22,14 @@ namespace PORTAL.WEB.Controllers
         private readonly ApplicationDbContext _context;
         private readonly ILogger _logger;
         private readonly IMapper _mapper;
-        public EmployeeZoneController(ApplicationDbContext context, ILogger<EmployeeZoneController> logger, IMapper mapper)
+        private readonly IHostingEnvironment _env;
+
+        public EmployeeZoneController(ApplicationDbContext context, ILogger<EmployeeZoneController> logger, IMapper mapper, IHostingEnvironment env)
         {
             _context = context;
             _logger = logger;
             _mapper = mapper;
+            _env = env;
         }
         public IActionResult Index()
         {
@@ -112,6 +115,7 @@ namespace PORTAL.WEB.Controllers
             if (ModelState.IsValid)
             {
                 OTPController oTPController = new OTPController(_context);
+                //var code = model.Code1 + model.Code2 + model.Code3 + model.Code4 + model.Code5;
                 var result = oTPController.validate(model.Code);
                 var results = Convert.ChangeType((result as ObjectResult)?.Value, typeof(string));
                 if (results.ToString().Contains("Error Code"))
@@ -153,7 +157,8 @@ namespace PORTAL.WEB.Controllers
         }
         public async Task<IActionResult> Search()
         {
-            return View(await _context.Employee.ToListAsync());
+            ViewData["webRoot"] = _env.WebRootPath;
+            return View(await _context.Employee.OrderBy(a=>a.Hiring_Date).ToListAsync());
         }
 
         [HttpGet]
@@ -165,12 +170,12 @@ namespace PORTAL.WEB.Controllers
             ViewData["empid"] = empId;
             var employeeRecord = _context.Employee.Where(a => a.Emp_ID == empId).SingleOrDefault();
             var LineManager = GetLineManager(employeeRecord.Line_Manager_No);
-            var sharesLineManager = GetSharesLineManagerList(employeeRecord.Line_Manager_No);
+            var sharesLineManager = GetSharesLineManagerList(employeeRecord);
             var directReportsList = GetDirectReportsList(employeeRecord.Emp_ID);
             model = _mapper.Map<EmployeeDetailsViewModels>(employeeRecord);
-            model.SharesLineManagers = sharesLineManager.Result.Records;
             model.LineManager = LineManager.Result.Records;
-            model.DirectReports = directReportsList.Result.Records;
+            model.SharesLineManagers = sharesLineManager.Result.Records.OrderBy(a=>a.Hiring_Date);
+            model.DirectReports = directReportsList.Result.Records.OrderBy(a => a.Hiring_Date);
 
             //return employeeRecord;
             return View(model);
@@ -198,10 +203,10 @@ namespace PORTAL.WEB.Controllers
             };
             return lineManager;
         }
-        private async Task<SharesLineManagerList> GetSharesLineManagerList(string lineManagerNo)
+        private async Task<SharesLineManagerList> GetSharesLineManagerList(Employee employee)
         {
             List<SharesLineManagerModel> dbRec = new List<SharesLineManagerModel>();
-            var record = await _context.Employee.Where(a => a.Line_Manager_No == lineManagerNo).ToListAsync();
+            var record = await _context.Employee.Where(a => a.Line_Manager_No == employee.Line_Manager_No && a.Emp_ID != employee.Emp_ID).ToListAsync();
             foreach (var item in record)
             {
                 var sharesLineManagerModel = new SharesLineManagerModel
@@ -210,7 +215,9 @@ namespace PORTAL.WEB.Controllers
                     Employee_Name_English = item.Employee_Name_English,
                     Employee_Name_Arabic = item.Employee_Name_Arabic,
                     Position = item.Position,
-                    E_Mail = item.E_Mail
+                    E_Mail = item.E_Mail,
+                    Hiring_Date = item.Hiring_Date,
+                    Grade = item.Grade
                 };
 
                 dbRec.Add(sharesLineManagerModel);
@@ -235,7 +242,9 @@ namespace PORTAL.WEB.Controllers
                     Employee_Name_English = item.Employee_Name_English,
                     Employee_Name_Arabic = item.Employee_Name_Arabic,
                     Position = item.Position,
-                    E_Mail = item.E_Mail
+                    E_Mail = item.E_Mail,
+                    Hiring_Date = item.Hiring_Date,
+                    Grade = item.Grade
                 };
 
                 dbRec.Add(directReportsModel);

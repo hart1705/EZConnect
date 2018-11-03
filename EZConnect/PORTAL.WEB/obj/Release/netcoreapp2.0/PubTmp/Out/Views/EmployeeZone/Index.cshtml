@@ -1,19 +1,34 @@
-﻿@model PORTAL.WEB.Models.OtpLoginViewModels.OtpLoginViewModel
-
-@{
-    ViewData["Title"] = "Employee Zone";
-    Layout = "~/Views/Shared/_FormLayout.cshtml";
-}
-
-@section ContentHeader{
-    <h4>Employee Zone</h4>
-}
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="search">
-            <div class="form-group">
-                <input type="submit" value="Search Employee" class="btn btn-default" />
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EZConnect Mobile </title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/ez.css" rel="stylesheet" />
+</head>
+<body class="">
+    <div class="content-wrapper ez-splash-image">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="span"><img class="center-block" src="~/images/ez_connect.png" style="max-height: 150px; max-width: 100%; margin-top:50px;" /></div>
             </div>
-        </form>
+        </div>
+        <br />
+        <br />
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="span"><img class="center-block" src="~/images/kaec_logo.png" style="max-height: 150px; max-width: 100%; margin-top:50px;" /></div>
+            </div>
+        </div>
     </div>
-</div>
+    <script>
+        setTimeout(function(){ 
+        window.location.href = '@(Url.Action("Login", "EmployeeZone"))'
+        }, 3000);
+    </script>
+
+</body>
+
+</html>

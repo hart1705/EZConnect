@@ -5,11 +5,6 @@
     Layout = "~/Views/Shared/_FormLayoutMobile.cshtml";
 }
 
-@section ContentHeader{
-    <h4>OTP Login</h4>
-}
-<br />
-<br />
 <br />
 <br />
 <br />
@@ -19,11 +14,17 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <input asp-for="UserName" class="form-control" placeholder="Username" />
-                <span asp-validation-for="UserName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="NEXT" class="btn btn-default form-control" style="background-color:#419C9D" />
+                <input type="submit" id="btnnext" value="NEXT" class="btn btn-default form-control ez-color" onclick="return btnNext()" />
             </div>
+            @*@if (ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count() > 0)
+                {
+                    <script>
+
+                    </script>
+
+                }*@
         </form>
     </div>
 </div>
@@ -32,3 +33,34 @@
         <div class="span"><img class="center-block" src="~/images/kaec_logo_colored.png" style="max-height: 150px; max-width: 100%; margin-top:50px;" /></div>
     </div>
 </div>
+
+<button hidden="hidden" id="btnModal" type="button" data-toggle="modal" data-target="#myModal">Launch modal</button>
+
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>Invalid Username</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function btnNext() {
+
+        var btnnext = document.getElementById("btnnext");
+        btnnext.value = "WAIT A MOMENT";
+        this.blur();
+
+    }
+    //function callModal(){
+    //var modelState = new JavaScriptSerializer().Serialize(ViewData.ModelState[""]);
+    //    var modelStateError = new JavaScriptSerializer().Serialize(ViewData.ModelState[""].Errors.Count());
+    //    if(modelState != null && modelStateError > 0)
+    //    document.getElementById("btnModal").click();
+    //}
+
+</script>

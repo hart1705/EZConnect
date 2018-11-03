@@ -78,7 +78,7 @@ namespace PORTAL.WEB
                 //    template: "{controller=Home}/{action=Index}/{id?}");
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=EmployeeZone}/{action=Login}/{id?}");
+                    template: "{controller=EmployeeZone}/{action=Index}/{id?}");
             });
         }
     }

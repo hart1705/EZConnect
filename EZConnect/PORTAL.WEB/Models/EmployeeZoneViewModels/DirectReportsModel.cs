@@ -13,6 +13,8 @@ namespace PORTAL.WEB.Models.EmployeeZoneViewModels
         public string Position { get; set; }
         public string Department { get; set; }
         public string E_Mail { get; set; }
+        public string Hiring_Date { get; set; }
+        public string Grade { get; set; }
 
     }
 }

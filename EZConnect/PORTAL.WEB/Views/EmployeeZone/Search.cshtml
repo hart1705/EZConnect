@@ -1,59 +1,64 @@
 ﻿@model IEnumerable<PORTAL.DAL.EF.Models.Employee>
-
+@using Microsoft.AspNetCore.Hosting;
 @{
     ViewData["Title"] = "Employee Zone";
     //Layout = "~/Views/Shared/_FormLayout.cshtml";
 }
 
-<div class="row">
-    <div class="col-md-4">
-        <div class="form-group">
-            <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-                <input type="text" id="Search" placeholder="Search Employee" class="form-control" />
-            </div>
-        </div>
-    </div>
-</div>
+
 <div class="box box-widget">
     <div class="box-body">
-        <table class="table">
-            @foreach (var item in Model)
-            {
-                <tbody>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group" >
+                        <div class="input-group" style="background-color:lightgray">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                            <input type="text" id="Search" placeholder="Search..." class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table class="table">
+                @foreach (var item in Model.OrderByDescending(a => a.Grade))
+                {
+                    <tbody>
 
-                    <tr class="Search" onclick="location.href = '@(Url.Action("Details", "EmployeeZone", new { empId = item.Emp_ID }))'">
-                        <td>
+                        <tr class="Search" onclick="location.href = '@(Url.Action("Details", "EmployeeZone", new { empId = item.Emp_ID }))'">
+                            <td>
 
-                            @{ var src = item.Emp_ID.ToString() != null ? item.Emp_ID.ToString() + ".jpg" : "default.jpg";}
-                            @{ var imagePath = "~/images/ez/" + item.Emp_ID.ToString() + ".jpg"; 
-                                if (imagePath != null)
-                                {
-                                    imagePath = "~/images/ez/" + item.Emp_ID.ToString() + ".jpg";
+                                @{ var src = item.Emp_ID.ToString() != null ? item.Emp_ID.ToString() + ".jpg" : "default.jpg";}
+                                @{ var imagePath = "~/images/ez/" + item.Emp_ID.ToString() + ".jpg";
+                                    var absolutePath = System.IO.Path.Combine(@ViewData["webRoot"].ToString(), imagePath);
+
+                                    if (System.IO.File.Exists(absolutePath))
+                                    {
+                                        imagePath = "~/images/ez/" + item.Emp_ID.ToString() + ".jpg";
+                                    }
+                                    else
+                                    {
+                                        imagePath = "~/images/ez/default.jpg";
+
+                                    }
                                 }
-                                else
-                                {
-                                    imagePath = "~/images/ez/default.jpg";
+                                @*<script>document.getElementById('imageBox').src = "~/images/" + item.Emp_ID + ".jpg" </script>*@
 
-                                }
-                            }
-                            @*<script>document.getElementById('imageBox').src = "~/images/" + item.Emp_ID + ".jpg" </script>*@
+                                <img class="center-block" src="~/images/ez/@src" style="max-height: 70px; max-width: 70px;" />
+                            </td>
 
-                            <img class="center-block" src="~/images/ez/@src" style="max-height: 120px; max-width: 100%;" />
-                        </td>
-                        
-                        <td>
-                            <b>@Html.DisplayFor(modelItem => item.Employee_Name_English)</b><br />
-                            @Html.DisplayFor(modelItem => item.Employee_Name_Arabic) <br />
-                            @Html.DisplayFor(modelItem => item.Position) <br />
-                            @Html.DisplayFor(modelItem => item.Department)
-                        </td>
+                            <td>
+                                <b>@Html.DisplayFor(modelItem => item.Employee_Name_English)</b><br />
+                                @Html.DisplayFor(modelItem => item.Employee_Name_Arabic) <br />
+                                @Html.DisplayFor(modelItem => item.Position) <br />
+                                @Html.DisplayFor(modelItem => item.Department)
+                            </td>
 
-                    </tr>
+                        </tr>
 
-                </tbody>
-            }
-        </table>
+                    </tbody>
+                }
+            </table>
+        </div>
     </div>
 </div>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>

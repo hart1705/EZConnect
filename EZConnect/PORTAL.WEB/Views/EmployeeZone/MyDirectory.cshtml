@@ -5,9 +5,6 @@
     Layout = "~/Views/Shared/_FormLayoutMobile.cshtml";
 }
 
-@section ContentHeader{
-    <h4>MY Directory</h4>
-}
 <br />
 <br />
 <br />
@@ -19,7 +16,10 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="form-group">
-                <input type="submit" value="Search" class="btn btn-default form-control" />
+                <div class="input-group" style="background-color:lightgray">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                    <input type="submit" value="Search..." class="form-control" />
+                </div>
             </div>
         </form>
     </div>
@@ -29,3 +29,4 @@
         <div class="span"><img class="center-block" src="~/images/kaec_logo_colored.png" style="max-height: 150px; max-width: 100%; margin-top:50px;" /></div>
     </div>
 </div>
+@await Html.PartialAsync("_FooterLayoutMobile")

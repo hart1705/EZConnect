@@ -8,8 +8,13 @@ namespace PORTAL.WEB.Models.EmployeeZoneViewModels
 {
     public class OtpCodeViewModel
     {
-        [Required]
         public string Code { get; set; }
+        public string Code1 { get; set; }
+        public string Code2 { get; set; }
+        public string Code3 { get; set; }
+        public string Code4 { get; set; }
+        public string Code5 { get; set; }
+
 
     }
 }

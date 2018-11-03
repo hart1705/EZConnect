@@ -51,6 +51,9 @@
     <Content Update="Views\Home\Index.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Views\Shared\_FooterLayoutMobile.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\Shared\_FormLayoutMobile.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
