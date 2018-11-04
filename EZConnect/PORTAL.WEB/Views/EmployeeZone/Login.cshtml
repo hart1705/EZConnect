@@ -8,12 +8,12 @@
 <br />
 <br />
 <br />
-<div class="row">
+<div class="row" style="background-color:#fff">
     <div class="col-md-12">
         <form asp-action="Login">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <input asp-for="UserName" class="form-control" placeholder="Username" />
+                <input asp-for="UserName" class="ez-entry" placeholder="Username" />
             </div>
             <div class="form-group">
                 <input type="submit" id="btnnext" value="NEXT" class="btn btn-default form-control ez-color" onclick="return btnNext()" />
