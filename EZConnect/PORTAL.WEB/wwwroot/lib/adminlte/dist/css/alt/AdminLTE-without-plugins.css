@@ -1134,9 +1134,9 @@ a:focus {
   color: #666666;
 }
 @media (max-width: 991px) {
-  .navbar-nav > .user-menu > .dropdown-menu > .user-footer .btn-default:hover {
-    background-color: #f9f9f9;
-  }
+    .navbar-nav > .user-menu > .dropdown-menu > .user-footer .btn-default:hover {
+        background-color: #3DA6AA;
+    }
 }
 .navbar-nav > .user-menu .user-image {
   float: left;
@@ -2227,7 +2227,7 @@ a:focus {
 .btn-default:hover,
 .btn-default:active,
 .btn-default.hover {
-  background-color: #e7e7e7;
+  background-color: #3DA6AA;
 }
 .btn-primary {
   background-color: #3c8dbc;

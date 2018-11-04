@@ -11,7 +11,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="form-group">
+                    <div class="form-group" >
                         <div class="input-group" style="background-color:lightgray">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
                             <input type="text" id="Search" placeholder="Search..." class="form-control" />
@@ -72,7 +72,7 @@
         $("#Search").keyup(function () {
             var searchText = $("#Search").val().toLowerCase();
             $(".Search").each(function () {
-                if (!Contains($(this).text().toLowerCase(), searchText)) {
+                if(!Contains($(this).text().toLowerCase(), searchText)) {
                     $(this).hide();
                 }
                 else {
@@ -81,5 +81,4 @@
             });
         });
     });
-    
 </script>

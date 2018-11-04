@@ -76,7 +76,7 @@
                         </div>
                     </div>
                     <br />
-                    <b class="ez-font-color"> Line Manager </b>
+                    <b class="ez-font-color"> Line Managers </b>
                     <table class="table">
                         @foreach (var item in Model.LineManager)
                         {
@@ -93,6 +93,7 @@
 
                                     <td>
                                         <b>@Html.DisplayFor(modelItem => item.Employee_Name_English)</b><br />
+                                        @Html.DisplayFor(modelItem => item.Employee_Name_Arabic) <br />
                                         @Html.DisplayFor(modelItem => item.Position) <br />
                                     </td>
 
@@ -101,7 +102,7 @@
                             </tbody>
                         }
                     </table>
-                    <b class="ez-font-color"> Shares Line Manager </b>
+                    <b class="ez-font-color"> Shares Line Managers </b>
                     <table class="table">
                         @foreach (var item in Model.SharesLineManagers.OrderByDescending(a => a.Grade))
                         {
@@ -117,6 +118,7 @@
 
                                     <td>
                                         <b>@Html.DisplayFor(modelItem => item.Employee_Name_English)</b><br />
+                                        @Html.DisplayFor(modelItem => item.Employee_Name_Arabic) <br />
                                         @Html.DisplayFor(modelItem => item.Position) <br />
                                     </td>
 
@@ -141,6 +143,7 @@
 
                                     <td>
                                         <b>@Html.DisplayFor(modelItem => item.Employee_Name_English)</b><br />
+                                        @Html.DisplayFor(modelItem => item.Employee_Name_Arabic) <br />
                                         @Html.DisplayFor(modelItem => item.Position) <br />
                                     </td>
 

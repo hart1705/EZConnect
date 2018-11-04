@@ -5,20 +5,32 @@
     //Layout = "~/Views/Shared/_FormLayout.cshtml";
 }
 
+    
 
 <div class="box box-widget">
-    <div class="box-body">
+
+    <div class="form-group" style="position: fixed; top: 0; width: 100%;box-shadow: 1px 2px 2px grey;">
+        <div class="input-group" style="height:45px">
+            <span class="input-group-addon" style="border:none"><i class="glyphicon glyphicon-search"></i></span>
+            <input type="text" id="Search" placeholder="Search..." class="form-control" style="text-align:left; height:45px;border:none" />
+        </div>
+    </div>
+
+
+    <div class="box-body" style="margin-top:38px">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <div class="input-group" style="background-color:lightgray">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-                            <input type="text" id="Search" placeholder="Search..." class="form-control" />
+
+
+            @*<div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group" >
+                            <div class="input-group" style="background-color:lightgray">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                                <input type="text" id="Search" placeholder="Search..." class="form-control" />
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div>*@
             <table class="table">
                 @foreach (var item in Model.OrderByDescending(a => a.Grade))
                 {
@@ -72,7 +84,7 @@
         $("#Search").keyup(function () {
             var searchText = $("#Search").val().toLowerCase();
             $(".Search").each(function () {
-                if (!Contains($(this).text().toLowerCase(), searchText)) {
+                if(!Contains($(this).text().toLowerCase(), searchText)) {
                     $(this).hide();
                 }
                 else {
@@ -81,5 +93,4 @@
             });
         });
     });
-    
 </script>

@@ -1,9 +1,9 @@
 ﻿.otp-txt {
     width: 50px;
     text-align: center;
-    height: 34px;
+    height: 50px;
     padding: 6px 12px;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.42857143;
     color: #555;
     background-color: #fff;
@@ -21,12 +21,17 @@
 }
 
 .ez-color {
-    background-color: #419C9D;
+    background-color: #3DA6AA;
 }
 .ez-font-color {
     color: #419C9D;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
 .ez-splash-image {
     background-color: #419C9D;
@@ -34,11 +39,50 @@
 }
 
 .ez-entry {
-    border: 1px solid black;
+    border: 1px solid #3DA6AA;
     float: left;
     margin: 0;
     padding: 0;
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
+    width: 100%;
 }
+
+
+.btn-default:hover,
+.btn-default:active,
+.btn-default:disabled,
+.btn-default.hover {
+    background-color: #419C9D;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    color: white;
+    text-align: center;
+}
+
+.header {
+    padding: 60px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+}
+
+.div-wrapper {
+    position: relative;
+    height: 300px;
+    width: 300px;
+}
+
+    .div-wrapper img {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
