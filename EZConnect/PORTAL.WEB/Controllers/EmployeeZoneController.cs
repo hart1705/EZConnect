@@ -258,6 +258,9 @@ namespace PORTAL.WEB.Controllers
             return directReportsList;
         }
 
-
+        public IActionResult SearchArabic()
+        {
+            return View();
+        }
     }
 }
