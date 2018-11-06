@@ -11,43 +11,47 @@
 <div class="row">
     <div class="col-md-12">
 
-        <form asp-action="Validate" name="formName">
+        <form asp-action="Validate" name="formName" onsubmit="checkForm(this);" >
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            
+
             <input asp-for="Code" id="code" class="form-control" placeholder="Code" type="hidden" />
-            
+
             <div class="form-group" style="margin-top:10px; margin-bottom:15px">
                 <div class="otp-txt-align">
-                    <input asp-for="Code1" type="number" id="otp1" name="otp1" class="otp-txt" maxlength="1" onkeypress="return isNumberKey(event)" oninput="autotab(this, document.formName.otp2)" style="margin-left:2px; margin-right:2px; width:34px"/>
-                    <input asp-for="Code2" type="number" id="otp2" name="otp2" class="otp-txt" maxlength="1" onkeypress="return isNumberKey(event)" oninput="autotab(this, document.formName.otp3)" style="margin-left:2px; margin-right:2px; width:34px"/>
-                    <input asp-for="Code3" type="number" id="otp3" name="otp3" class="otp-txt" maxlength="1" onkeypress="return isNumberKey(event)" oninput="autotab(this, document.formName.otp4)" style="margin-left:2px; margin-right:2px; width:34px"/>
-                    <input asp-for="Code4" type="number" id="otp4" name="otp4" class="otp-txt" maxlength="1" onkeypress="return isNumberKey(event)" oninput="autotab(this, document.formName.otp5)" style="margin-left:2px; margin-right:2px; width:34px"/>
-                    <input asp-for="Code5" type="number" id="otp5" name="otp5" class="otp-txt" maxlength="1" onkeypress="return isNumberKey(event)" oninput="autotab(this, document.formName.continue)" style="margin-left:2px; margin-right:2px; width:34px"/>
+                    <input asp-for="Code1" type="number" id="otp1" name="otp1" class="otp-txt" maxlength="1" placeholder="__" onkeypress="return isNumberKey(event)" oninput="autotab(this, document.formName.otp2)" style="margin-left:2px; margin-right:2px; width:34px" />
+                    <input asp-for="Code2" type="number" id="otp2" name="otp2" class="otp-txt" maxlength="1" placeholder="__" onkeypress="return isNumberKey(event)" oninput="autotab(this, document.formName.otp3)" style="margin-left:2px; margin-right:2px; width:34px" />
+                    <input asp-for="Code3" type="number" id="otp3" name="otp3" class="otp-txt" maxlength="1" placeholder="__" onkeypress="return isNumberKey(event)" oninput="autotab(this, document.formName.otp4)" style="margin-left:2px; margin-right:2px; width:34px" />
+                    <input asp-for="Code4" type="number" id="otp4" name="otp4" class="otp-txt" maxlength="1" placeholder="__" onkeypress="return isNumberKey(event)" oninput="autotab(this, document.formName.otp5)" style="margin-left:2px; margin-right:2px; width:34px" />
+                    <input asp-for="Code5" type="number" id="otp5" name="otp5" class="otp-txt" maxlength="1" placeholder="__" onkeypress="return isNumberKey(event)" oninput="autotab(this, document.formName.continue)" style="margin-left:2px; margin-right:2px; width:34px" />
                 </div>
             </div>
             <div class="form-group" style="margin-left:20px;margin-right:20px;">
                 <input type="submit" id="btncontinue" name="continue" value="CONTINUE" class="btn btn-default form-control ez-color" style="color:white; font-size:smaller; height:40px" />
             </div>
             @*<div class="form-group otp-txt-align">
-                <a href="@(Url.Action("login", "EmployeeZone"))">Send a new code</a>
-            </div>*@
+                    <a href="@(Url.Action("login", "EmployeeZone"))">Send a new code</a>
+                </div>*@
         </form>
     </div>
 </div>
+<br />
+<br />
+<br />
 
-<div class="footer">
-
-    <img class="center-block" src="~/images/kaec_logo_orig_rgb.png" style="max-height: 80px; max-width: 100%;" />
+<div class="row">
+    <div class="col-md-12">
+        <img class="center-block" src="~/images/kaec_logo_orig_rgb.png" style="max-height: 110px; max-width: 100%;" />
+    </div>
 </div>
 
 @*<div class="row">
-    <div class="col-md-12">
-        <div class="span"><img class="center-block" src="~/images/kaec_logo_colored.png" style="max-height: 150px; max-width: 100%; margin-top:50px;" /></div>
-    </div>
-</div>*@
+        <div class="col-md-12">
+            <div class="span"><img class="center-block" src="~/images/kaec_logo_colored.png" style="max-height: 150px; max-width: 100%; margin-top:50px;" /></div>
+        </div>
+    </div>*@
 
 <script>
-    
+
     function isNumberKey(evt)
 	{
 		var charCode = (evt.which) ? evt.which : evt.keyCode;
@@ -67,7 +71,7 @@
 		return true;
 		return false;
 	}
-    
+
     function autotab(current,to)
     {
         var otp1 = document.getElementById("otp1");
@@ -85,6 +89,9 @@
                 //$('#btncontinue').prop('disable', false);  //jquery
             }
         }
+    }
+    function checkForm(form) {
+        form.continue.disabled = true;
     }
 
 </script>

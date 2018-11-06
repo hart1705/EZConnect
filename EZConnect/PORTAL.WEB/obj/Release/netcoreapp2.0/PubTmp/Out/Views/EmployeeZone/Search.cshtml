@@ -5,78 +5,119 @@
     //Layout = "~/Views/Shared/_FormLayout.cshtml";
 }
 
+    
 
 <div class="box box-widget">
-    <div class="box-body">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group" >
-                        <div class="input-group" style="background-color:lightgray">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-                            <input type="text" id="Search" placeholder="Search..." class="form-control" />
+
+    <div class="form-group" style="position: fixed; top: 0; width: 100%;box-shadow: 1px 2px 2px grey;">
+        <div class="input-group" style="height:45px">
+            <span class="input-group-addon" style="border:none"><i class="glyphicon glyphicon-search"></i></span>
+            <input type="text" id="Search" placeholder="Search..." class="form-control" style="text-align:left; height:45px;border:none" />
+        </div>
+    </div>
+
+
+    <div class="box-body" style="margin-top:38px">
+        <div class="container" >
+            @*<div class="row">
+            <div class="col-md-4">
+                <div class="form-group" >
+                    <div class="input-group" style="background-color:lightgray">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                        <input type="text" id="Search" placeholder="Search..." class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>*@
+            <br />
+
+            <div id="ez">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row" style="text-align:center">
+                            <p style="font-size:smaller">Search by employee name, position or department</p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-5" style="text-align:right">
+                                <img src="~/images/ez_logo.png" style="max-height: 35px; max-width: 35px;" />
+                            </div>
+                            <div class="col-xs-offset-5 text-middle" style="text-align:left;">
+                                <p style="font-size:larger">EZConnect</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <table class="table">
-                @foreach (var item in Model.OrderByDescending(a => a.Grade))
-                {
-                    <tbody>
+            <div id="tblSearch" style="display:none">
+                <table class="table">
+                    @foreach (var item in Model.OrderByDescending(a => a.Grade))
+                    {
+                        <tbody>
 
-                        <tr class="Search" onclick="location.href = '@(Url.Action("Details", "EmployeeZone", new { empId = item.Emp_ID }))'">
-                            <td>
+                            <tr class="Search" onclick="location.href = '@(Url.Action("Details", "EmployeeZone", new { empId = item.Emp_ID }))'">
+                                <td>
 
-                                @{ var src = item.Emp_ID.ToString() != null ? item.Emp_ID.ToString() + ".jpg" : "default.jpg";}
-                                @{ var imagePath = "~/images/ez/" + item.Emp_ID.ToString() + ".jpg";
-                                    var absolutePath = System.IO.Path.Combine(@ViewData["webRoot"].ToString(), imagePath);
+                                    @{ var src = item.Emp_ID.ToString() != null ? item.Emp_ID.ToString() + ".jpg" : "default.jpg";}
+                                    @{ var imagePath = "~/images/ez/" + item.Emp_ID.ToString() + ".jpg";
+                                        var absolutePath = System.IO.Path.Combine(@ViewData["webRoot"].ToString(), imagePath);
 
-                                    if (System.IO.File.Exists(absolutePath))
-                                    {
-                                        imagePath = "~/images/ez/" + item.Emp_ID.ToString() + ".jpg";
+                                        if (System.IO.File.Exists(absolutePath))
+                                        {
+                                            imagePath = "~/images/ez/" + item.Emp_ID.ToString() + ".jpg";
+                                        }
+                                        else
+                                        {
+                                            imagePath = "~/images/ez/default.jpg";
+
+                                        }
                                     }
-                                    else
-                                    {
-                                        imagePath = "~/images/ez/default.jpg";
+                                    @*<script>document.getElementById('imageBox').src = "~/images/" + item.Emp_ID + ".jpg" </script>*@
 
-                                    }
-                                }
-                                @*<script>document.getElementById('imageBox').src = "~/images/" + item.Emp_ID + ".jpg" </script>*@
+                                    <img class="center-block" src="~/images/ez/@src" style="max-height: 70px; max-width: 70px;" />
+                                </td>
 
-                                <img class="center-block" src="~/images/ez/@src" style="max-height: 70px; max-width: 70px;" />
-                            </td>
+                                <td>
+                                    <b>@Html.DisplayFor(modelItem => item.Employee_Name_English)</b><br />
+                                    @Html.DisplayFor(modelItem => item.Employee_Name_Arabic) <br />
+                                    @Html.DisplayFor(modelItem => item.Position) <br />
+                                    @Html.DisplayFor(modelItem => item.Department)
+                                </td>
 
-                            <td>
-                                <b>@Html.DisplayFor(modelItem => item.Employee_Name_English)</b><br />
-                                @Html.DisplayFor(modelItem => item.Employee_Name_Arabic) <br />
-                                @Html.DisplayFor(modelItem => item.Position) <br />
-                                @Html.DisplayFor(modelItem => item.Department)
-                            </td>
+                            </tr>
 
-                        </tr>
-
-                    </tbody>
-                }
-            </table>
+                        </tbody>
+                    }
+                </table>
+            </div>
         </div>
     </div>
 </div>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 
 <script>
+    var ez = document.getElementById("ez");
+    var tblSearch = document.getElementById("tblSearch");
+   
     $(document).ready(function () {
+        tblSearch.style.display = "None";
         function Contains(text_one, text_two) {
             if (text_one.indexOf(text_two) != -1)
                 return true;
         }
-        $("#Search").keyup(function () {
+        
+        $("#Search").keydown(function () {
             var searchText = $("#Search").val().toLowerCase();
             $(".Search").each(function () {
                 if(!Contains($(this).text().toLowerCase(), searchText)) {
                     $(this).hide();
+                    tblSearch.style.display = "block";
+                    ez.style.display = "None";
                 }
                 else {
                     $(this).show();
+                    tblSearch.style.display = "None";
+                    ez.style.display = "block";
                 }
             });
         });

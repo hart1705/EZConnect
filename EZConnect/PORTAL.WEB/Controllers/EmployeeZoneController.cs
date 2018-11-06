@@ -15,6 +15,8 @@ using PORTAL.DAL.EF.Models;
 using PORTAL.WEB.Controllers.API;
 using PORTAL.WEB.Models.EmployeeZoneViewModels;
 using Microsoft.AspNetCore.Hosting;
+using System.Globalization;
+
 namespace PORTAL.WEB.Controllers
 {
     public class EmployeeZoneController : Controller
@@ -155,6 +157,7 @@ namespace PORTAL.WEB.Controllers
             return RedirectToAction(nameof(Search));
             
         }
+
         public async Task<IActionResult> Search()
         {
             ViewData["webRoot"] = _env.WebRootPath;
@@ -173,15 +176,16 @@ namespace PORTAL.WEB.Controllers
             var sharesLineManager = GetSharesLineManagerList(employeeRecord);
             var directReportsList = GetDirectReportsList(employeeRecord.Emp_ID);
             model = _mapper.Map<EmployeeDetailsViewModels>(employeeRecord);
+            
             model.LineManager = LineManager.Result.Records;
-            model.SharesLineManagers = sharesLineManager.Result.Records.OrderBy(a=>a.Hiring_Date);
-            model.DirectReports = directReportsList.Result.Records.OrderBy(a => a.Hiring_Date);
+            model.SharesLineManagers = sharesLineManager.Result.Records.OrderByDescending(a=>a.Grade);
+            model.DirectReports = directReportsList.Result.Records.OrderByDescending(a => a.Grade);
 
             //return employeeRecord;
             return View(model);
         }
         private async Task<LineManagerList> GetLineManager(string lineManagerNo)
-        {
+        {   
             List<LineManagerModel> dbRec = new List<LineManagerModel>();
             var item = await _context.Employee.Where(a => a.Emp_ID == lineManagerNo).SingleOrDefaultAsync();
 
@@ -209,6 +213,7 @@ namespace PORTAL.WEB.Controllers
             var record = await _context.Employee.Where(a => a.Line_Manager_No == employee.Line_Manager_No && a.Emp_ID != employee.Emp_ID).ToListAsync();
             foreach (var item in record)
             {
+                DateTime hiringDate = DateTime.Parse(item.Hiring_Date);//.ParseExact(item.Hiring_Date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
                 var sharesLineManagerModel = new SharesLineManagerModel
                 {
                     Emp_ID = item.Emp_ID,
@@ -216,7 +221,7 @@ namespace PORTAL.WEB.Controllers
                     Employee_Name_Arabic = item.Employee_Name_Arabic,
                     Position = item.Position,
                     E_Mail = item.E_Mail,
-                    Hiring_Date = item.Hiring_Date,
+                    Hiring_Date = hiringDate,
                     Grade = item.Grade
                 };
 
@@ -226,8 +231,8 @@ namespace PORTAL.WEB.Controllers
 
             SharesLineManagerList sharesLineManagerList = new SharesLineManagerList
             {
-                Records = dbRec
-            };
+                Records = dbRec.OrderBy(a => a.Hiring_Date)
+        };
             return sharesLineManagerList;
         }
         private async Task<DirectReportsList> GetDirectReportsList(string ManagerNo)
@@ -236,6 +241,7 @@ namespace PORTAL.WEB.Controllers
             var record = await _context.Employee.Where(a => a.Line_Manager_No == ManagerNo).ToListAsync();
             foreach (var item in record)
             {
+                DateTime hiringDate = DateTime.Parse(item.Hiring_Date);
                 var directReportsModel = new DirectReportsModel
                 {
                     Emp_ID = item.Emp_ID,
@@ -243,7 +249,7 @@ namespace PORTAL.WEB.Controllers
                     Employee_Name_Arabic = item.Employee_Name_Arabic,
                     Position = item.Position,
                     E_Mail = item.E_Mail,
-                    Hiring_Date = item.Hiring_Date,
+                    Hiring_Date = hiringDate,
                     Grade = item.Grade
                 };
 
@@ -253,7 +259,7 @@ namespace PORTAL.WEB.Controllers
 
             DirectReportsList directReportsList = new DirectReportsList
             {
-                Records = dbRec
+                Records = dbRec.OrderBy(a => a.Hiring_Date)
             };
             return directReportsList;
         }

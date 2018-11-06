@@ -76,11 +76,38 @@
                         </div>
                     </div>
                     <br />
-                    <b class="ez-font-color"> Line Managers </b>
-                    <table class="table">
-                        @foreach (var item in Model.LineManager)
-                        {
+                    <div id="tblLineManager">
+                        <b class="ez-font-color"> Line Manager </b>
+                        <table class="table">
+                            @foreach (var item in Model.LineManager)
+                            {
 
+                                <tbody>
+
+                                    <tr class="Search" onclick="location.href = '@(Url.Action("Details", "EmployeeZone", new { empId = item.Emp_ID }))'">
+                                        <td>
+
+                                            @{ var srcLineManager = item.Emp_ID.ToString() + ".jpg";}
+
+                                            <img class="center-block" src="~/images/ez/@srcLineManager" style="max-height: 70px; max-width: 70px;" />
+                                        </td>
+
+                                        <td>
+                                            <b>@Html.DisplayFor(modelItem => item.Employee_Name_English)</b><br />
+                                            @Html.DisplayFor(modelItem => item.Position) <br />
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+                            }
+                        </table>
+                    </div>
+                    
+                    <b class="ez-font-color"> Shares Line Manager </b>
+                    <table class="table">
+                        @foreach (var item in Model.SharesLineManagers)
+                        {
                             <tbody>
 
                                 <tr class="Search" onclick="location.href = '@(Url.Action("Details", "EmployeeZone", new { empId = item.Emp_ID }))'">
@@ -93,32 +120,6 @@
 
                                     <td>
                                         <b>@Html.DisplayFor(modelItem => item.Employee_Name_English)</b><br />
-                                        @Html.DisplayFor(modelItem => item.Employee_Name_Arabic) <br />
-                                        @Html.DisplayFor(modelItem => item.Position) <br />
-                                    </td>
-
-                                </tr>
-
-                            </tbody>
-                        }
-                    </table>
-                    <b class="ez-font-color"> Shares Line Managers </b>
-                    <table class="table">
-                        @foreach (var item in Model.SharesLineManagers.OrderByDescending(a => a.Grade))
-                        {
-                            <tbody>
-
-                                <tr class="Search" onclick="location.href = '@(Url.Action("Details", "EmployeeZone", new { empId = item.Emp_ID }))'">
-                                    <td>
-
-                                        @{ var srcLineManager = item.Emp_ID.ToString() + ".jpg";}
-
-                                        <img class="center-block" src="~/images/ez/@srcLineManager" style="max-height: 70px; max-width: 70px;" />
-                                    </td>
-
-                                    <td>
-                                        <b>@Html.DisplayFor(modelItem => item.Employee_Name_English)</b><br />
-                                        @Html.DisplayFor(modelItem => item.Employee_Name_Arabic) <br />
                                         @Html.DisplayFor(modelItem => item.Position) <br />
                                     </td>
 
@@ -129,7 +130,7 @@
                     </table>
                     <b class="ez-font-color"> Direct Reports </b>
                     <table class="table">
-                        @foreach (var item in Model.DirectReports.OrderByDescending(a => a.Grade))
+                        @foreach (var item in Model.DirectReports)
                         {
                             <tbody>
 
@@ -143,7 +144,6 @@
 
                                     <td>
                                         <b>@Html.DisplayFor(modelItem => item.Employee_Name_English)</b><br />
-                                        @Html.DisplayFor(modelItem => item.Employee_Name_Arabic) <br />
                                         @Html.DisplayFor(modelItem => item.Position) <br />
                                     </td>
 
@@ -158,3 +158,10 @@
         </div>
     </div>
 </div>
+<script>
+    var tblLineManager = document.getElementById("tblLineManager");
+    if (@Model.Emp_ID.ToString() == "41") {
+        tblLineManager.style.display = "None";
+    }
+    
+</script>

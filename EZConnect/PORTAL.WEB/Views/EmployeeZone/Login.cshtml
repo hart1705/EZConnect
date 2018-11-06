@@ -13,7 +13,7 @@
         <form asp-action="Login">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <input asp-for="UserName" class="form-control ez-entry" autocomplete="off" style="border-bottom-color:gray; color:#2e3131"  placeholder="Username" />
+                <input asp-for="UserName" class="form-control ez-entry" autocomplete="off" style="border-bottom-color:gray; color:#2e3131" placeholder="Username" />
             </div>
             <div class="form-group">
                 <input type="submit" id="btnnext" value="NEXT" class="btn btn-default form-control ez-color" style="margin-top:10px; color:#FFF; font-size:smaller" onclick="return btnNext()" />
@@ -28,17 +28,21 @@
         </form>
     </div>
 </div>
-
-<div class="footer">
-   
-        <img class="center-block" src="~/images/kaec_logo_orig_rgb.png" style="max-height: 80px; max-width: 100%;" />
-    </div>
-
-@*<div class="row">
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="row">
     <div class="col-md-12">
-        <div class="span"><img class="center-block" src="~/images/kaec_logo_orig_rgb.png" style="max-height: 80px; max-width: 100%; margin-top:50px;" /></div>
+        <img class="center-block" src="~/images/kaec_logo_orig_rgb.png" style="max-height: 110px; max-width: 100%;" />
     </div>
-</div>*@
+</div>
+@*<div class="row">
+        <div class="col-md-12">
+            <div class="span"><img class="center-block" src="~/images/kaec_logo_orig_rgb.png" style="max-height: 80px; max-width: 100%; margin-top:50px;" /></div>
+        </div>
+    </div>*@
 
 <button hidden="hidden" id="btnModal" type="button" data-toggle="modal" data-target="#myModal">Launch modal</button>
 
