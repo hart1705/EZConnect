@@ -103,31 +103,33 @@
                             }
                         </table>
                     </div>
+                    <div id="tblSharesLineManager">
+                        <b class="ez-font-color"> Shares Line Manager </b>
+                        <table class="table">
+                            @foreach (var item in Model.SharesLineManagers)
+                            {
+                                <tbody>
+
+                                    <tr class="Search" onclick="location.href = '@(Url.Action("Details", "EmployeeZone", new { empId = item.Emp_ID }))'">
+                                        <td>
+
+                                            @{ var srcLineManager = item.Emp_ID.ToString() + ".jpg";}
+
+                                            <img class="center-block" src="~/images/ez/@srcLineManager" style="max-height: 70px; max-width: 70px;" />
+                                        </td>
+
+                                        <td>
+                                            <b>@Html.DisplayFor(modelItem => item.Employee_Name_English)</b><br />
+                                            @Html.DisplayFor(modelItem => item.Position) <br />
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+                            }
+                        </table>
+                    </div>
                     
-                    <b class="ez-font-color"> Shares Line Manager </b>
-                    <table class="table">
-                        @foreach (var item in Model.SharesLineManagers)
-                        {
-                            <tbody>
-
-                                <tr class="Search" onclick="location.href = '@(Url.Action("Details", "EmployeeZone", new { empId = item.Emp_ID }))'">
-                                    <td>
-
-                                        @{ var srcLineManager = item.Emp_ID.ToString() + ".jpg";}
-
-                                        <img class="center-block" src="~/images/ez/@srcLineManager" style="max-height: 70px; max-width: 70px;" />
-                                    </td>
-
-                                    <td>
-                                        <b>@Html.DisplayFor(modelItem => item.Employee_Name_English)</b><br />
-                                        @Html.DisplayFor(modelItem => item.Position) <br />
-                                    </td>
-
-                                </tr>
-
-                            </tbody>
-                        }
-                    </table>
                     <b class="ez-font-color"> Direct Reports </b>
                     <table class="table">
                         @foreach (var item in Model.DirectReports)
@@ -162,6 +164,7 @@
     var tblLineManager = document.getElementById("tblLineManager");
     if (@Model.Emp_ID.ToString() == "41") {
         tblLineManager.style.display = "None";
+        tblSharesLineManager.style.display = "None";
     }
     
 </script>

@@ -14,6 +14,9 @@ using PORTAL.DAL.EF;
 using PORTAL.DAL.EF.Models;
 using Microsoft.AspNetCore.Http;
 using AutoMapper;
+using Microsoft.Extensions.WebEncoders;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 
 namespace PORTAL.WEB
 {
@@ -46,7 +49,9 @@ namespace PORTAL.WEB
                 .AddDefaultTokenProviders();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             // Add application services.
-
+            services.AddSingleton<HtmlEncoder>(
+            HtmlEncoder.Create(allowedRanges: new[] { UnicodeRanges.BasicLatin,
+                                            UnicodeRanges.Arabic }));
             services.AddScoped<IUserHandler, UserHandler>();
             services.AddTransient<IEmailSender, EmailSender>();
             services.AddAutoMapper();

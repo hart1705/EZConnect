@@ -85,7 +85,9 @@ namespace PORTAL.WEB.Controllers.API
                            || EF.Functions.Like(s.Position, "%" + keyWord + "%")
                            || EF.Functions.Like(s.Department, "%" + keyWord + "%")
                            || EF.Functions.Like(s.Division, "%" + keyWord + "%")
-                           || EF.Functions.Like(s.Emp_ID, "%" + keyWord + "%")) 
+                           || EF.Functions.Like(s.Emp_ID, "%" + keyWord + "%")
+                           || EF.Functions.Like(s.Employee_Name_Arabic, "%" + keyWord + "%")
+                           || EF.Functions.Like(s.PositionArabic, "%" + keyWord + "%")) 
                            //&& EF.Functions.Equals(s.Termination_Date).Equals(null)
                            select s;
             if (employee == null)

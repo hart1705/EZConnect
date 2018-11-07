@@ -213,6 +213,7 @@ namespace PORTAL.WEB.Controllers
             var record = await _context.Employee.Where(a => a.Line_Manager_No == employee.Line_Manager_No && a.Emp_ID != employee.Emp_ID).ToListAsync();
             foreach (var item in record)
             {
+                if (item.Emp_ID == "41") continue;
                 DateTime hiringDate = DateTime.Parse(item.Hiring_Date);//.ParseExact(item.Hiring_Date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
                 var sharesLineManagerModel = new SharesLineManagerModel
                 {
@@ -241,6 +242,7 @@ namespace PORTAL.WEB.Controllers
             var record = await _context.Employee.Where(a => a.Line_Manager_No == ManagerNo).ToListAsync();
             foreach (var item in record)
             {
+                if (item.Emp_ID == "41") continue;
                 DateTime hiringDate = DateTime.Parse(item.Hiring_Date);
                 var directReportsModel = new DirectReportsModel
                 {
@@ -264,6 +266,11 @@ namespace PORTAL.WEB.Controllers
             return directReportsList;
         }
 
+        public async Task<IActionResult> SearchArabic()
+        {
+            ViewData["webRoot"] = _env.WebRootPath;
+            return View(await _context.Employee.OrderBy(a => a.Hiring_Date).ToListAsync());
+        }
 
     }
 }
