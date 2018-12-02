@@ -33,8 +33,8 @@ namespace PORTAL.WEB
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
+                //options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseMySql("server=localhost:8080; port=3306; database=ez; user=root; password=P@ssword"));
             services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
                 {
                     // Password settings

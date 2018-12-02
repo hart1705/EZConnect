@@ -1,0 +1,9 @@
+C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.DAL.EF.MYSQL\bin\Debug\netstandard2.0\PORTAL.DAL.EF.MYSQL.deps.json
+C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.DAL.EF.MYSQL\bin\Debug\netstandard2.0\PORTAL.DAL.EF.MYSQL.dll
+C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.DAL.EF.MYSQL\bin\Debug\netstandard2.0\PORTAL.DAL.EF.MYSQL.pdb
+C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.DAL.EF.MYSQL\obj\Debug\netstandard2.0\PORTAL.DAL.EF.MYSQL.csproj.CoreCompileInputs.cache
+C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.DAL.EF.MYSQL\obj\Debug\netstandard2.0\PORTAL.DAL.EF.MYSQL.AssemblyInfoInputs.cache
+C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.DAL.EF.MYSQL\obj\Debug\netstandard2.0\PORTAL.DAL.EF.MYSQL.AssemblyInfo.cs
+C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.DAL.EF.MYSQL\obj\Debug\netstandard2.0\PORTAL.DAL.EF.MYSQL.dll
+C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.DAL.EF.MYSQL\obj\Debug\netstandard2.0\PORTAL.DAL.EF.MYSQL.pdb
+C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.DAL.EF.MYSQL\obj\Debug\netstandard2.0\PORTAL.DAL.EF.MYSQL.csprojAssemblyReference.cache

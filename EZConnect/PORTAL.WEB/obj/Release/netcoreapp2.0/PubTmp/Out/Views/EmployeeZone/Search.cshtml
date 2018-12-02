@@ -108,18 +108,20 @@
         
         $("#Search").keydown(function () {
             var searchText = $("#Search").val().toLowerCase();
-            $(".Search").each(function () {
-                if(!Contains($(this).text().toLowerCase(), searchText)) {
-                    $(this).hide();
-                    tblSearch.style.display = "block";
-                    ez.style.display = "None";
-                }
-                else {
-                    $(this).show();
-                    tblSearch.style.display = "None";
-                    ez.style.display = "block";
-                }
-            });
+            if(this.value.length < 4 ){
+                $(".Search").each(function () {
+                    if(!Contains($(this).text().toLowerCase(), searchText)) {
+                        $(this).hide();
+                        tblSearch.style.display = "block";
+                        ez.style.display = "None";
+                    }
+                    else {
+                        $(this).show();
+                        tblSearch.style.display = "None";
+                        ez.style.display = "block";
+                    }
+                });
+            }
         });
     });
 </script>

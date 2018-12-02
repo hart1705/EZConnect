@@ -73,3 +73,5 @@ C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.WEB\obj\Release\netc
 C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.WEB\obj\Release\netcoreapp2.0\PORTAL.WEB.csproj.CopyComplete
 C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.WEB\obj\Release\netcoreapp2.0\PORTAL.WEB.dll
 C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.WEB\obj\Release\netcoreapp2.0\PORTAL.WEB.pdb
+C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.WEB\bin\Release\netcoreapp2.0\PORTAL.DAL.EF.MYSQL.dll
+C:\Users\aramos\Documents\GitHub\EZConnect\EZConnect\PORTAL.WEB\bin\Release\netcoreapp2.0\PORTAL.DAL.EF.MYSQL.pdb
